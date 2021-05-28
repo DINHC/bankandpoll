@@ -1,9 +1,9 @@
 import os
 import csv
-filepath = os.path.join("..", "Pybank","budget_data.csv")
+filepath = os.path.join("..", "Pybank","budget_data.csv") 
 
 total_months = 0
-total_profit_loss = 0 #profit/loss
+total_profit_loss = 0 #profit/loss (change name maybe?)
 value = 0
 change = 0
 dates = []
@@ -32,9 +32,21 @@ with open("budget_data.csv", "r") as csv_file:
         value = int(row[1])
         dates.append(row[0])  
 
-        Greatest_Decrease = min[profits]
+        average = sum(profits)/len(profits)
 
-        Great_Increase = max[profits]
+        Greatest_Decrease = min(profits)
+        Lowest_Index = profits.index(Greatest_Decrease)
+        Lowest_Date = dates(Lowest_Index)
+
+        Greatest_Increase = max(profits)
+        Greatest_Index = profits.index(Greatest_Increase)
+        Greatest_Date = dates(Greatest_Index)
+
+        
+
+
+        
+
 
     
 
