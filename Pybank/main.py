@@ -42,7 +42,7 @@ with open("budget_data.csv", "r") as csv_file:
         Greatest_Index = profits.index(Greatest_Increase)
         Greatest_Date = dates(Greatest_Index)
 
-        
+
 
 
         
