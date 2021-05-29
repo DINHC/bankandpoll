@@ -4,8 +4,8 @@ file_path = os.path.join("Resources","budget_data.csv")
 
 total_months = 0
 total_profit_loss = 0 #profit/loss (change name maybe?)
-month_total = 0
-change = 0
+month_amount = 0
+monthly_change = 0
 dates = []
 profits = []
 
@@ -22,16 +22,16 @@ with open(file_path) as csv_file:
     total_profit_loss += int(first_row[1])
     #total_profit_loss = total_profit_loss + int(first_row[1])
   
-    month_total = int(first_row[1])
+    month_amount = int(first_row[1])
       
       
     for row in csv_reader:
         
         total_months = total_months + 1 
-        change = int(row[1])-month_total #
+        monthly_change = int(row[1])-month_amount #
         total_profit_loss = total_profit_loss + int(row[1]) 
-        profits.append(int(row[1])) 
-        value = int(row[1])
+        profits.append(monthly_change) 
+        month_amount = int(row[1])
         dates.append(row[0])  
 
         # net change = current month amount - past month amount
@@ -64,13 +64,13 @@ print(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})"
 
 text_export = open(os.path.join("..","Pybank","Analysis", "Pybank.txt"), "w")
 
-text_export.write("Financial Analysis")
-text_export.write("------------------")
-text_export.write(f"Total Months: {str(total_months)}")
-text_export.write(f"Total: ${str(total_profit_loss)}")
-text_export.write(f"Average Change: ${str(round(average,2))}")
-text_export.write(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})")
-text_export.write(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})")
+text_export.write("Financial Analysis\n")
+text_export.write("------------------\n")
+text_export.write(f"Total Months: {str(total_months)}\n")
+text_export.write(f"Total: ${str(total_profit_loss)}\n")
+text_export.write(f"Average Change: ${str(round(average,2))}\n")
+text_export.write(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})\n")
+text_export.write(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})\n")
 text_export.close()
 
 
