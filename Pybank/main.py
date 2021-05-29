@@ -28,7 +28,7 @@ with open(file_path) as csv_file:
         total_months = total_months + 1 
         change = int(row[1])-value
         total_profit_loss = total_profit_loss + int(row[1]) 
-        profits.append((row[1])) 
+        profits.append(int(row[1])) 
         value = int(row[1])
         dates.append(row[0])  
 
@@ -54,7 +54,19 @@ print(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)}
 print(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})")
 
         
-os.getcwd
+#os.getcwd
+
+text_export = open(os.path.join("..","Pybank","Analysis", "Pybank.txt"), "w")
+
+text_export.write("Financial Analysis")
+text_export.write("------------------")
+text_export.write(f"Total Months: {str(total_months)}")
+text_export.write(f"Total: ${str(total_profit_loss)}")
+text_export.write(f"Average Change: ${str(round(average,2))}")
+text_export.write(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})")
+text_export.write(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})")
+text_export.write()
+text_export.close()
 
 
     
