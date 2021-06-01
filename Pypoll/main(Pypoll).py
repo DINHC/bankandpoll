@@ -17,10 +17,17 @@ vote_amount = 0
             vote_amount += 1 
 
         
+
+
+
         for votes in vote_amount: 
             percent = (votes/vote_amount) * 100 
             percent = round(percent)
             percent = "{:.2%}".format(percent)
             vote_percentage.append(percent)
+
+        winner = max(vote_amount)
+        index = vote_amount.index(winner)
+        win_candidate = candidates[index]
 
         
