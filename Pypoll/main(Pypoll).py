@@ -8,16 +8,21 @@ vote_count = []
 vote_percentage = []
 vote_amount = 0 
 
-with open(election) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter =",")
+with open(election) as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter =",")
         csv_header = next(csv_reader)
         file_to_output = "election_data.txt"
    
-for row in csv_reader: 
+        for row in csv_reader:  
             vote_amount += 1 
-
-            
-
+        
+        if row[2] not in candidates:
+            candidates.append(row[2])
+            index = candidates.index(row[2])
+            vote_amount.append(1)
+        else:
+            index = candidates.index(row[2])
+            vote_amount[index] += 1
         
 
 
