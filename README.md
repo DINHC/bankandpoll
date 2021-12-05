@@ -4,10 +4,30 @@ Overview:
 
 There are two files. PyBank And PyPoll
 
+For pybank:
+
+- After joining the paths and reading the csv we create empty brackets for:
+      
+      - Profit
+      - Dates
+  
+- The other variables are set to equal 0
+  
+- Formulas are then applied to figure out average, montly change etc, 
+- The code will then print out the result and create a .txt file with the results
+
 ![](screenshot/pybank.png) 
 
 ![](screenshot/pybank2.png)  
 
+- Similarly the code reads in a new csv and creates empty brackets for: 
+      - Candidates 
+      - Vote Count 
+      - Vote Percentage
+- While Vote Amount is equal to 0
+
+- Afterwards we create a code to go through the csv and count each for vote fro each candidate 
+- The code will then print out the result and create a .txt file with the results
 ![](screenshot/pypoll.png)  
 
 ![](screenshot/pypoll2.png)  
@@ -25,7 +45,7 @@ PyBank utilizes python to work with financial data to produce:
 
      -The greatest decrease in profits (date and amount) over the entire period
      
-![](screenshot/microbesitetop.png)   
+![](screenshot/pybankresult.png)   
 
  PyPoll utilizes python to work with election data to produce: 
  
@@ -39,4 +59,4 @@ PyBank utilizes python to work with financial data to produce:
 
      -The winner of the election based on popular vote.
 
-![](screenshot/microbesitetop.png)
+![](screenshot/pypollresult.png)
